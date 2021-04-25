@@ -1,0 +1,7 @@
+---
+- hosts: piswarm
+  become: true
+  become_user: root
+  tasks:
+    - name: Running docker installation script
+      command: sh /home/wesipls/projects/bash/tools/install-docker.sh
