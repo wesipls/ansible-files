@@ -1,0 +1,13 @@
+## HOST CONFIGS ##
+
+[all:vars]
+ansible_user='wesipls'
+ansible_become=yes
+ansible_become_method=sudo
+
+## HOSTS ##
+[piswarm]
+wesipls@xehanort.local
+wesipls@ansem.local
+wesipls@xemnas.local
+wesipls@xigbar.local
