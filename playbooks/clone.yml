@@ -1,0 +1,12 @@
+---
+- hosts: piswarm
+  tasks:
+    - name: Creating projects folder
+      file:
+        path: /home/wesipls/projects
+        state: directory
+
+    - name: Fetching github.com/wesipls/bash repo
+      git: 
+        repo: https://github.com/wesipls/bash.git
+        dest: /home/wesipls/projects/bash
