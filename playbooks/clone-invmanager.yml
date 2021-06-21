@@ -1,0 +1,12 @@
+---
+- hosts: piswarm
+  tasks:
+    - name: Creating projects folder
+      file:
+        path: /home/wesipls/projects
+        state: directory
+
+    - name: Fetching github.com/wesipls/inventory_manager repo
+      git: 
+        repo: https://github.com/wesipls/inventory_manager.git
+        dest: /home/wesipls/projects/inventory_manager
