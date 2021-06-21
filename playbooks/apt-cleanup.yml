@@ -1,0 +1,9 @@
+---
+- hosts: piswarm
+  become: true
+  become_user: root
+  tasks:
+    - name: Autoremove unused packages
+    command: apt-get -y autoremove
+    register: autoremove_output
+    changed_when: "'The following packages will be REMOVED' in autoremove_output.stdout"
