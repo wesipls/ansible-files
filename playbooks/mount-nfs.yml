@@ -1,0 +1,22 @@
+---
+- hosts: piswarm
+  become: true
+  become_user: root
+  tasks:
+    - name: Installing nfs-common
+      apt:
+        name: nfs-common
+        update_cache: yes
+        force_apt_get: yes
+        cache_valid_time: 3600
+        state: present
+    
+    - name: Mounting network drive
+      mount:
+        fstype: nfs
+        opts: defaults
+        dump: 0
+        passno: 0
+        state: mounted
+        src: 192.168.1.110:/mnt/share
+        path: /mnt/share
